@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 
-import NavBar from '../../Components/NavBar/Navbar'
+import NavBar from '../../Components/Navbar/Navbar'
 import IntroText from '../../Components/Intro_Text/IntroText'
 import NightSky from '../../Components/NightSky/NightSky'
 import CoverImage from '../../Components/CoverImage/coverImage'
