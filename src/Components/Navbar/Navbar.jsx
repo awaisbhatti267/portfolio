@@ -7,11 +7,14 @@ const Navbar = () => {
     const scrollToSection = (id) => {
         setMenuOpen(false)
 
-        // Small delay to let Suspense render the section first
         setTimeout(() => {
             const el = document.getElementById(id)
+
             if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                el.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                })
             }
         }, 100)
     }
@@ -38,33 +41,27 @@ const Navbar = () => {
                 <ul className={menuOpen ? 'nav-links active' : 'nav-links'}>
 
                     <li>
-                        <a onClick={() => scrollToSection('home')} href="#home">
+                        <button onClick={() => scrollToSection('home')}>
                             Home
-                        </a>
+                        </button>
                     </li>
 
                     <li>
-                        <a onClick={() => scrollToSection('projects')} href="#projects">
+                        <button onClick={() => scrollToSection('projects')}>
                             Projects
-                        </a>
+                        </button>
                     </li>
 
                     <li>
-                        <a onClick={() => scrollToSection('resume')} href="#resume">
+                        <button onClick={() => scrollToSection('resume')}>
                             Resume
-                        </a>
+                        </button>
                     </li>
 
-                    {/* <li>
-                        <a onClick={() => scrollToSection('testimonials')} href="#testimonials">
-                            Testimonials
-                        </a>
-                    </li> */}
-
                     <li>
-                        <a onClick={() => scrollToSection('contact')} href="#contact">
+                        <button onClick={() => scrollToSection('contact')}>
                             Contact
-                        </a>
+                        </button>
                     </li>
 
                 </ul>

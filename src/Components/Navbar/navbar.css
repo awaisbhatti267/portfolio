@@ -9,6 +9,7 @@
 
 nav {
     height: 85px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +21,7 @@ nav {
     z-index: 1000;
 
     background: rgba(2, 6, 23, 0.92);
+
     backdrop-filter: blur(12px);
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -27,7 +29,7 @@ nav {
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
 }
 
-/* Logo Section */
+/* Logo */
 
 .logo {
     display: flex;
@@ -85,6 +87,7 @@ nav h2:hover {
 
 nav ul {
     display: flex;
+
     gap: 28px;
 
     list-style: none;
@@ -94,14 +97,13 @@ nav ul {
 
 nav ul li {
     font-size: 18px;
+
     position: relative;
 }
 
-/* Links */
+/* Buttons */
 
-nav ul li a {
-    text-decoration: none;
-
+nav ul li button {
     color: #cbd5e1;
 
     padding: 8px 14px;
@@ -110,12 +112,18 @@ nav ul li a {
 
     transition: 0.35s ease;
 
-    position: relative;
+    background: transparent;
+
+    border: none;
+
+    font-size: 18px;
+
+    cursor: pointer;
 }
 
 /* Hover Effects */
 
-nav ul li a:hover {
+nav ul li button:hover {
     color: #38bdf8;
 
     background: rgba(56, 189, 248, 0.08);
@@ -123,10 +131,11 @@ nav ul li a:hover {
     box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
 }
 
-/* Active Line */
+/* Bottom Line */
 
 .line-nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -155,7 +164,9 @@ nav ul li a:hover {
 
     nav {
         flex-wrap: wrap;
+
         height: auto;
+
         padding: 18px 22px;
     }
 
@@ -207,8 +218,9 @@ nav ul li a:hover {
         padding-bottom: 15px;
     }
 
-    nav ul li a {
+    nav ul li button {
         display: block;
+
         width: 100%;
     }
 }
@@ -220,8 +232,8 @@ nav ul li a:hover {
     nav {
         padding: 14px 16px;
 
-        /* Remove blur on mobile — expensive on low-end devices */
         backdrop-filter: none;
+
         background: rgba(2, 6, 23, 0.97);
     }
 
@@ -250,8 +262,10 @@ nav ul li a:hover {
         font-size: 16px;
     }
 
-    nav ul li a {
+    nav ul li button {
         padding: 8px 10px;
+
+        font-size: 16px;
     }
 }
 
@@ -294,9 +308,11 @@ nav ul li a:hover {
         font-size: 14px;
     }
 
-    nav ul li a {
+    nav ul li button {
         padding: 6px 8px;
 
         border-radius: 8px;
+
+        font-size: 14px;
     }
 }
