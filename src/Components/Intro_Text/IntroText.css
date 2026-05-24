@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* IntroText.css */
+
+.intro-text {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  max-width: 700px;
+  padding: 2rem;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  animation: fadeUp 1s ease;
+}
+
+/* Small Heading */
+.intro-text h5 {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--accent-cyan);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  position: relative;
+  width: fit-content;
+}
+
+.intro-text h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 60%;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    var(--accent-blue),
+    transparent
+  );
+}
+
+/* Main Heading */
+.intro-text h1 {
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+
+  color: var(--text-main);
+
+  text-shadow: 0 0 25px var(--glow-blue);
+}
+
+/* Typing Text */
+.type-text {
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+
+  color: var(--accent-blue);
+
+  min-height: 50px;
+
+  text-shadow: 0 0 12px var(--glow-blue);
+}
+
+/* Paragraph */
+.intro-text p {
+  font-family: "Inter", sans-serif;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.9;
+
+  max-width: 650px;
+
+  margin-top: 0.5rem;
+}
+
+/* Glow Effect — no filter blur, use radial-gradient only */
+.intro-text::before {
+  content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.12),
+    transparent 70%
+  );
+
+  /* REMOVED filter: blur(30px) — causes repaint on every typing re-render */
+
+  z-index: -1;
+
+  top: -100px;
+  left: -100px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .intro-text {
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .intro-text h5::after {
+    left: 50%;
+    transform: translateX(-85%);
+  }
+
+  .intro-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .intro-text h1 {
+    /* Remove text-shadow on mobile — repaints on every typing update */
+    text-shadow: none;
+  }
+
+  .type-text {
+    /* Remove text-shadow on mobile */
+    text-shadow: none;
+  }
+
+  .intro-text::before {
+    display: none;
+  }
+}
+
+/* Small Mobile Screens */
+@media screen and (max-width: 320px) {
+  .intro-text {
+    padding: 0.8rem;
+    gap: 0.7rem;
+  }
+
+  .intro-text h5 {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .type-text {
+    font-size: 1rem;
+    min-height: 35px;
+  }
+
+  .intro-text p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+}

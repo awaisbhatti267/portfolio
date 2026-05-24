@@ -1,0 +1,299 @@
+/* resume.css */
+
+.resume {
+  position: relative;
+
+  padding: 7rem 8%;
+
+  min-height: 100vh;
+}
+
+/* Title */
+.resume-title {
+  text-align: center;
+
+  margin-bottom: 4rem;
+}
+
+.resume-title h5 {
+  color: var(--accent-cyan);
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 1rem;
+}
+
+.resume-title h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* Tabs */
+.resume-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 4rem;
+}
+
+/* Tab Buttons */
+.resume-tabs button {
+  padding: 1rem 2rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  background: rgba(15, 23, 42, 0.75);
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+/* Active Tab */
+.resume-tabs button.active {
+  background: linear-gradient(
+    135deg,
+    var(--accent-blue),
+    var(--accent-cyan)
+  );
+
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+/* Education / Experience / Achievements Cards */
+.resume-content {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 2rem;
+}
+
+.resume-card {
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  background: rgba(15, 23, 42, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+.resume-card h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.3rem;
+}
+
+.resume-card span {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: var(--accent-cyan);
+
+  font-size: 0.95rem;
+}
+
+.resume-card p {
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+}
+
+/* Skills 2-column grid */
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0 4rem;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+/* Skill Item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.8rem;
+}
+
+/* Skill Info */
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-info h4 {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.skill-info span {
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+}
+
+/* Bar */
+.skill-bar {
+  width: 100%;
+  height: 10px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  overflow: hidden;
+}
+
+/* Progress */
+.skill-progress {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent-blue),
+    var(--accent-cyan)
+  );
+
+  transform-origin: left;
+  animation: progressAnim 1.5s ease forwards;
+}
+
+@keyframes progressAnim {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* See More toggle — achievements */
+.resume-toggle {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2rem;
+}
+
+.resume-toggle .toggle-btn {
+  padding: 1rem 3rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.4);
+
+  border-radius: 50px;
+
+  background: transparent;
+
+  color: var(--accent-blue);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  font-family: 'Poppins', sans-serif;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.resume-toggle .toggle-btn:hover {
+  background: rgba(56, 189, 248, 0.08);
+
+  border-color: rgba(56, 189, 248, 0.8);
+
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+
+  transform: scale(1.05);
+}
+
+/* Achievement card entrance animation */
+@keyframes achieveFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resume-content .resume-card {
+  animation: achieveFadeUp 0.4s ease both;
+}
+
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .resume {
+    padding: 6rem 5%;
+  }
+
+  .resume-tabs {
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .resume-tabs button {
+    width: 100%;
+  }
+
+  .resume-card {
+    padding: 1.5rem;
+  }
+
+  .resume-toggle .toggle-btn {
+    width: 100%;
+    padding: 0.9rem 2rem;
+  }
+}
+
+/* Small Devices */
+@media screen and (max-width: 320px) {
+  .resume {
+    padding: 5rem 4%;
+  }
+
+  .resume-card {
+    padding: 1.2rem;
+    border-radius: 18px;
+  }
+}

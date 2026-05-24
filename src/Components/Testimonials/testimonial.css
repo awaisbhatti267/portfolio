@@ -1,0 +1,136 @@
+/* testimonial.css */
+
+.testimonial {
+  padding: 7rem 8%;
+}
+
+/* Title */
+.testimonial-title {
+  text-align: center;
+
+  margin-bottom: 4rem;
+}
+
+.testimonial-title h5 {
+  color: var(--accent-cyan);
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 1rem;
+}
+
+.testimonial-title h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* Cards */
+.testimonial-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 2rem;
+}
+
+/* Card */
+.testimonial-card {
+  padding: 2rem;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  background: rgba(15, 23, 42, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+/* Image */
+.testimonial-card img {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  margin-bottom: 1rem;
+
+  border: 3px solid var(--accent-blue);
+}
+
+.testimonial-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card span {
+  color: var(--accent-cyan);
+
+  font-size: 0.9rem;
+}
+
+.testimonial-card p {
+  margin-top: 1rem;
+
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .testimonial {
+    padding: 6rem 5%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .testimonial {
+    padding: 5rem 4%;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 1rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Devices */
+@media screen and (max-width: 320px) {
+  .testimonial-card {
+    padding: 1.2rem;
+
+    border-radius: 18px;
+  }
+
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
+  }
+}

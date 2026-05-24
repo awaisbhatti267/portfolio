@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+
+nav {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 40px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
+}
+
+/* Logo Section */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Profile Image */
+
+.image-nav {
+    width: 55px;
+    height: 55px;
+
+    background-image: url('../../assets/Awais2.webp');
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 50%;
+
+    border: 2px solid #38bdf8;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.image-nav:hover {
+    transform: scale(1.08);
+
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+}
+
+/* Name */
+
+nav h2 {
+    font-size: 24px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #f8fafc;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+nav h2:hover {
+    color: #38bdf8;
+}
+
+/* Navigation Links */
+
+nav ul {
+    display: flex;
+    gap: 28px;
+
+    list-style: none;
+}
+
+/* List Item */
+
+nav ul li {
+    font-size: 18px;
+    position: relative;
+}
+
+/* Links */
+
+nav ul li a {
+    text-decoration: none;
+
+    color: #cbd5e1;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    transition: 0.35s ease;
+
+    position: relative;
+}
+
+/* Hover Effects */
+
+nav ul li a:hover {
+    color: #38bdf8;
+
+    background: rgba(56, 189, 248, 0.08);
+
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+/* Active Line */
+
+.line-nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Hamburger */
+
+.hamburger {
+    display: none;
+
+    color: #f8fafc;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #38bdf8;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 18px 22px;
+    }
+
+    nav h2 {
+        font-size: 18px;
+    }
+
+    .logo {
+        gap: 16px;
+    }
+
+    .image-nav {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Mobile Menu */
+
+    .nav-links {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 18px;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+
+        opacity: 1;
+
+        margin-top: 20px;
+
+        padding-bottom: 15px;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 14px 16px;
+
+        /* Remove blur on mobile — expensive on low-end devices */
+        backdrop-filter: none;
+        background: rgba(2, 6, 23, 0.97);
+    }
+
+    nav h2 {
+        font-size: 16px;
+    }
+
+    .logo {
+        gap: 16px;
+    }
+
+    .image-nav {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hamburger {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    nav ul li {
+        font-size: 16px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+}
+
+/* Extra Small Devices */
+
+@media (max-width: 320px) {
+
+    nav {
+        padding: 12px 10px;
+    }
+
+    .logo {
+        gap: 12px;
+    }
+
+    .image-nav {
+        width: 36px;
+        height: 36px;
+
+        border-width: 1.5px;
+    }
+
+    nav h2 {
+        font-size: 13px;
+
+        letter-spacing: 0.5px;
+    }
+
+    .hamburger {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 10px;
+
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        font-size: 14px;
+    }
+
+    nav ul li a {
+        padding: 6px 8px;
+
+        border-radius: 8px;
+    }
+}
