@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
-import './textType.css';
+import './texttype.css';
 
 const TextType = ({
   text,
