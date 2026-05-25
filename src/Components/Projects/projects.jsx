@@ -17,7 +17,7 @@ const projects = [
     title: 'Modern Portfolio',
     desc: 'Responsive personal portfolio built with React, smooth scroll animations, lazy loading and 96 Lighthouse performance score.',
     demo: 'https://muhammad-awais-bhatti.vercel.app',
-    github: 'https://github.com/awaisbhatti267',
+    github: 'https://github.com/awaisbhatti267/portfolio',
     image: portfolioImg
   },
   {
