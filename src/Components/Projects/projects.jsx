@@ -2,11 +2,8 @@ import { useState } from 'react'
 import './projects.css'
 
 import portfolioImg from '../../assets/Portfolio.webp'
-import resumeImg    from '../../assets/AI-Powered.webp'
+import resumeImg from '../../assets/AI-Powered.webp'
 import blockchainImg from '../../assets/Blockchain.webp'
-// import eaImg         from '../../assets/EA.webp'
-// import taskImg       from '../../assets/TaskManager.webp'
-// import weatherImg    from '../../assets/Weather.webp'
 
 const projects = [
   {
@@ -19,7 +16,7 @@ const projects = [
   {
     title: 'Modern Portfolio',
     desc: 'Responsive personal portfolio built with React, smooth scroll animations, lazy loading and 96 Lighthouse performance score.',
-    demo: '#',
+    demo: 'https://muhammad-awais-bhatti.vercel.app',
     github: 'https://github.com/awaisbhatti267',
     image: portfolioImg
   },
@@ -35,22 +32,8 @@ const projects = [
     desc: 'Proposed and implemented a new gameplay feature for EA Sports College Football using C++, UML diagrams and OOP design principles.',
     demo: '#',
     github: 'https://github.com/awaisbhatti267/EA-Software-Engineering-Virtual-Experience',
-    image: null   // replace with: eaImg
+    image: null
   },
-  // {
-  //   title: 'Task Manager',
-  //   desc: 'Productivity application with drag-drop tasks, authentication and cloud database storage.',
-  //   demo: '#',
-  //   github: 'https://github.com/awaisbhatti267',
-  //   image: null   // replace with: taskImg
-  // },
-  // {
-  //   title: 'Weather App',
-  //   desc: 'Real-time weather forecast application using APIs with elegant modern UI design.',
-  //   demo: '#',
-  //   github: 'https://github.com/awaisbhatti267',
-  //   image: null   // replace with: weatherImg
-  // },
 ]
 
 const Projects = () => {
@@ -78,30 +61,43 @@ const Projects = () => {
             data-animate
             style={{ animationDelay: `${(index % 3) * 0.1}s` }}
           >
+
             <div
               className={`project-image ${project.image ? 'has-image' : ''}`}
-              style={project.image ? {
-                backgroundImage: `url(${project.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center top'
-              } : {}}
+              style={
+                project.image
+                  ? {
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center top'
+                    }
+                  : {}
+              }
             />
 
             <div className="project-content">
+
               <h3>{project.title}</h3>
+
               <p>{project.desc}</p>
 
               <div className="project-buttons">
-                <button onClick={() => openLink(project.demo)}>
-                  Live Demo
-                </button>
+
+                {project.demo !== '#' && (
+                  <button onClick={() => openLink(project.demo)}>
+                    Live Demo
+                  </button>
+                )}
+
                 <button
                   className="secondary-btn"
                   onClick={() => openLink(project.github)}
                 >
                   Github
                 </button>
+
               </div>
+
             </div>
 
           </div>
